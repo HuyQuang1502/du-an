@@ -1,0 +1,119 @@
+/* --- Quy tắc chung & Tương phản màu sắc (Yêu cầu chống lỗi WAVE) --- */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #222222; /* Màu chữ tối trên nền sáng đảm bảo độ tương phản cao */
+}
+
+h1, p {
+    padding: 10px 20px;
+}
+
+/* --- Yêu cầu 3: Liên kết "Skip to Main Content" chỉ hiển thị khi focus --- */
+.skip-link {
+    position: absolute;
+    top: -100px; /* Đẩy ra ngoài màn hình */
+    left: 0;
+    background: #bf1722;
+    color: white;
+    padding: 12px;
+    z-index: 100;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.skip-link:focus {
+    top: 0; /* Hiện lên trên cùng khi nhấn tab trúng */
+    outline: 2px solid #000;
+}
+
+/* --- Yêu cầu 4 & 7: Thanh điều hướng phong cách, dùng ít nhất 3 thuộc tính & FLEXBOX --- */
+.navbar {
+    display: flex; /* Đạt yêu cầu 7 (Flexbox trên thẻ cha) */
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1a252f; /* Màu nền tối */
+    padding: 15px 30px; /* Thuộc tính 1: Padding */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Thuộc tính 2: Box-shadow */
+}
+
+.navbar .logo {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: #ffffff; /* Đảm bảo tương phản trên nền tối #1a252f */
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 5px 10px; /* Thuộc tính 3: Padding cho link */
+    transition: background-color 0.3s ease;
+}
+
+/* --- Yêu cầu 8: Lớp giả :hover làm điều gì đó thú vị --- */
+.nav-links a:hover {
+    background-color: #34495e; /* Đổi màu nền mượt mà khi di chuột qua */
+    color: #00ffcc; 
+    border-radius: 4px;
+}
+
+.nav-links a.active {
+    border-bottom: 3px solid #00ffcc;
+}
+
+/* --- Yêu cầu 5: Định kiểu tất cả hình ảnh bằng mô hình hộp (Border, Padding, Border-radius) --- */
+img {
+    box-sizing: border-box;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 15px auto;
+    border: 5px solid #34495e;       /* Đủ 1: Đường viền (Border) */
+    padding: 10px;                    /* Đủ 2: Đệm (Padding) */
+    border-radius: 8px;               /* Đủ 3: Bán kính viền (Border-radius) */
+    background-color: #ffffff;
+}
+
+/* --- Yêu cầu 6: Thuộc tính Grid cho ít nhất 1 phần tử cha (Tối thiểu 2 cột) --- */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Tự động chia cột, luôn luôn >= 2 cột trên màn hình rộng */
+    gap: 20px;
+    padding: 20px;
+}
+
+/* --- Yêu cầu 9: Thực hiện bộ chọn nâng cao nth-child --- */
+.nth-list {
+    list-style: none;
+    padding: 20px;
+}
+
+.nth-list li {
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+/* Đổi màu nền so le cho các phần tử con */
+.nth-list li:nth-child(odd) {
+    background-color: #eaedd0; 
+}
+
+.nth-list li:nth-child(even) {
+    background-color: #d0e1ea;
+}
