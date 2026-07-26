@@ -1,0 +1,51 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+#image {
+    line-height: 300px;
+    width: 600px;
+    height: 300px;
+    border: 3px solid #333;
+    margin: 20px auto;
+    background-color: #8e8e8e;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    font-size: 150%;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.preview {
+    width: 200px;
+    height: 150px;
+    border: 3px solid #ccc;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.preview:hover, .preview:focus {
+    transform: scale(1.05);
+    border-color: #0056b3;
+    outline: 3px solid #ffbf47; /* Hiển thị viền rõ ràng khi focus bàn phím */
+}

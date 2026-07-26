@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thư viện ảnh có thể truy cập</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body onload="addTabFocus()">
+
+    <header>
+        <h1>Thư viện ảnh thiên nhiên</h1>
+    </header>
+
+    <main>
+        <!-- Khung hiển thị ảnh phóng to -->
+        <div id="image">
+            Rê chuột hoặc dùng phím Tab để xem ảnh tại đây.
+        </div>
+
+        <!-- Danh sách 6 hình ảnh xem trước -->
+        <div class="gallery">
+            <img class="preview" 
+                 alt="Rừng thông xanh ngát trong sương sớm" 
+                 src="https://picsum.photos/id/10/200/150" 
+                 onmouseover="upDate(this)" 
+                 onmouseleave="unDo()" 
+                 onfocus="upDate(this)" 
+                 onblur="unDo()">
+
+            <img class="preview" 
+                 alt="Bờ biển cát trắng với làn nước trong xanh" 
+                 src="https://picsum.photos/id/11/200/150" 
+                 onmouseover="upDate(this)" 
+                 onmouseleave="unDo()" 
+                 onfocus="upDate(this)" 
+                 onblur="unDo()">
+
+            <img class="preview" 
+                 alt="Dãy núi cao phủ đầy tuyết trắng" 
+                 src="https://picsum.photos/id/12/200/150" 
+                 onmouseover="upDate(this)" 
+                 onmouseleave="unDo()" 
+                 onfocus="upDate(this)" 
+                 onblur="unDo()">
+
+            <img class="preview" 
+                 alt="Con đường mùa thu ngợp lá vàng rơi" 
+                 src="https://picsum.photos/id/13/200/150" 
+                 onmouseover="upDate(this)" 
+                 onmouseleave="unDo()" 
+                 onfocus="upDate(this)" 
+                 onblur="unDo()">
+
+            <img class="preview" 
+                 alt="Cánh đồng hoa hướng dương dưới ánh nắng" 
+                 src="https://picsum.photos/id/14/200/150" 
+                 onmouseover="upDate(this)" 
+                 onmouseleave="unDo()" 
+                 onfocus="upDate(this)" 
+                 onblur="unDo()">
+
+            <img class="preview" 
+                 alt="Thác nước chảy xiết giữa rừng nguyên sinh" 
+                 src="https://picsum.photos/id/15/200/150" 
+                 onmouseover="upDate(this)" 
+                 onmouseleave="unDo()" 
+                 onfocus="upDate(this)" 
+                 onblur="unDo()">
+        </div>
+    </main>
+
+</body>
+</html>
