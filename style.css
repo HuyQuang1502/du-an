@@ -1,0 +1,92 @@
+/* ==========================================================================
+   1. CHẾ ĐỘ XEM DI ĐỘNG (Mobile-First Default)
+   Không sử dụng Media Query ở đây.
+   ========================================================================== */
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr; /* Lưới 1 cột */
+  gap: 10px;                  /* Khoảng cách 10px giữa hàng và cột */
+}
+
+figure {
+  margin: 0;
+  padding: 10px;
+  background-color: #f4f4f4;  /* Bảng màu sáng mặc định */
+  color: #333333;
+  border: 2px solid #ccc;
+  box-sizing: border-box;
+}
+
+figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+/* ==========================================================================
+   2. CHẾ ĐỘ XEM MÁY TÍNH BẢNG (Tablet View: min-width 772px)
+   ========================================================================== */
+
+@media (min-width: 772px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr); /* Lưới 2 cột */
+  }
+
+  figure {
+    border-radius: 50%; /* Bo tròn các hình */
+    overflow: hidden;
+  }
+
+  /* Con số/hình cuối cùng chiếm cả 2 cột */
+  figure:last-of-type {
+    grid-column: span 2;
+  }
+}
+
+
+/* ==========================================================================
+   3. CHẾ ĐỘ XEM MÀN HÌNH LỚN (Large Screen View: min-width 992px)
+   ========================================================================== */
+
+@media (min-width: 992px) {
+  /* Xóa bo tròn đường viền khỏi tất cả các hình */
+  figure {
+    border-radius: 0;
+  }
+
+  /* Đặt lại hình cuối cùng nếu cần để không bị ghi đè bởi quy tắc 2 cột của máy tính bảng */
+  figure:last-of-type {
+    grid-column: auto;
+  }
+
+  /* Mỗi hình thứ 3 (3, 6, 9,...) sẽ chiếm 2 cột */
+  figure:nth-of-type(3n) {
+    grid-column: span 2;
+  }
+}
+
+
+/* ==========================================================================
+   4. TRUY VẤN GIẢM CHUYỂN ĐỘNG (Prefers Reduced Motion)
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto; /* Xóa hiệu ứng cuộn mượt */
+  }
+}
+
+
+/* ==========================================================================
+   5. TRUY VẤN CHẾ ĐỘ TỐI (Prefers Color Scheme: Dark)
+   ========================================================================== */
+
+@media (prefers-color-scheme: dark) {
+  figure {
+    background-color: #222222; /* Màu nền tối */
+    color: #ffff00;            /* Màu chữ sáng (vàng) */
+    border-color: #000000;     /* Viền màu đen */
+  }
+}
