@@ -1,0 +1,164 @@
+/* Styling chung & Biến màu */
+:root {
+    --primary-color: #0056b3; /* Xanh dương chủ đạo Phenikaa */
+    --secondary-color: #f4f6f9;
+    --text-color: #333333;
+    --accent-color: #ff6b00; /* Màu cam nhấn */
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+* {
+    box-shadow: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
+
+/* Header & Thanh điều hướng */
+header {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    padding: 1.5rem 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.tagline {
+    margin: 5px 0 0;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+nav {
+    margin-top: 20px;
+    text-align: center;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    display: inline-block; /* Để hover dễ nhìn hơn trên mobile */
+}
+
+/* Feature 1: Hiệu ứng Hover linh hoạt cho link */
+nav a:hover {
+    color: var(--accent-color);
+}
+
+/* Layout chính & Cards */
+main {
+    max-width: 1000px; /* Tăng chiều rộng để ảnh đẹp hơn */
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+/* Feature 2: Bo góc & Đổ bóng hiện đại cho từng Section */
+.card {
+    background: #ffffff;
+    padding: 30px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease;
+}
+
+/* Feature 3: Hiệu ứng chuyển động khi rê chuột vào Card */
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h2 {
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--primary-color);
+    padding-bottom: 10px;
+    margin-top: 0;
+    font-size: 1.6rem;
+}
+
+/* --- TÍNH NĂNG MỚI: XỬ LÝ HÌNH ẢNH --- */
+
+/* Feature 4: Responsive Media Query cho thiết bị di động */
+/* Responsive cho ảnh bìa chính */
+.cover-image {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    margin-bottom: 25px;
+}
+
+/* Responsive cho ảnh trong Thư viện */
+.campus-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.gallery-image {
+    width: 100%;
+    max-width: 700px;
+    margin: 10px auto;
+    border-radius: 8px;
+    display: block;
+}
+
+/* Điều chỉnh khoảng cách cho danh sách */
+.faculty-list {
+    padding-left: 20px;
+}
+
+.faculty-list li {
+    margin-bottom: 8px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #e9ecef;
+    font-size: 0.95rem;
+}
+
+/* Cập nhật lại Media Query cho Responsive */
+@media (max-width: 768px) {
+    header {
+        padding: 1rem;
+    }
+    header h1 {
+        font-size: 1.6rem;
+    }
+    nav {
+        margin-top: 15px;
+    }
+    nav a {
+        display: block; /* Chuyển menu thành dọc trên mobile */
+        margin: 10px 0;
+    }
+    
+    .card {
+        padding: 20px;
+    }
+    
+    main {
+        padding: 0 10px;
+    }
+}
